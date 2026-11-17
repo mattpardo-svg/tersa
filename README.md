@@ -1,5 +1,7 @@
-
-Read-only, no code changes. Run output/20250506T0030Z.
-1. The log line "RD activated=276 generating unit(s) (197.6 MW redispatched)" disagrees with rd_results.csv and summary.csv (202.67 MW up). Find in the code what each number counts. Is the 5.07 MW gap units that are not connected, or something else? Does the AC verification apply 197.6 or 202.67 MW?
-2. The run_profile steps add up to about 6,561 s, but run_time_s is 7,753 s. Which steps after "Apply and AC verification" are not profiled (N-X loadings, overload diagnosis, output writing, others)? Give file:line.
-Answer in at most 10 lines.
+Read-only. Do not create or keep any file in the repo; use a temporary script outside the repo if needed and delete it. Run output/20250506T0030Z.
+1. Pre-MILP (base case, before RAs): for N-0, N-X PATL, N-X TATL and N-X scanned give overloaded XNECs, overloaded branches and total overload in A, the same way as the final AC check in summary.csv.
+2. N-X pairs: how do 4,679,136 monitored pairs become the 704,059 "considered" by the nx_constraint_filter? List each step with its count.
+3. PST: how do 25 PSTs become 19 rows in pst_ra.csv? Count per reason.
+4. RD: how do 267 bids become 48 rows in rd_bids.csv? Count per reason.
+5. Contingencies: why did 29 must-study contingencies return no post-contingency result?
+Answer as short tables, at most 25 lines.
