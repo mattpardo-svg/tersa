@@ -1,1 +1,1 @@
-Read-only, counts only. The 840 time points outside T3's countertrade schedules that were shifted: which classes do they belong to (PowerBidSchedule of redispatch RAs, other time series), and what were their UTC dates before the shift (they are now +154 days)? If any of them were already within 2025-05-05 22:00Z to 2025-05-06 22:00Z before the shift, shift those back by -154 days in both the zip and _extracted_ncp\, and report the counts.
+
